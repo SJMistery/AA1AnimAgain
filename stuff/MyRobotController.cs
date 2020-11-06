@@ -30,7 +30,6 @@ namespace RobotController
 
     public class MyRobotController
     {
-
         private int counter = 0;
         #region public methods
 
@@ -70,7 +69,7 @@ namespace RobotController
             rot1 = Rotate(rot1, axis, angle);
             rot2 = Rotate(rot2, axis, angle);
             rot3 = Rotate(rot3, axis, angle);
-
+            
 
         }
 
@@ -82,31 +81,107 @@ namespace RobotController
 
         public bool PickStudAnim(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
-
-            bool myCondition = false;
-            //todo: add a check for your condition
-
-
-
-            if (myCondition)
+            float angle;
+            MyVec axis;
+            if (counter < 20)
             {
-                //todo: add your code here
-                rot0 = NullQ;
-                rot1 = NullQ;
-                rot2 = NullQ;
-                rot3 = NullQ;
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-12 - counter) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (110 + counter) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (90 - counter) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
 
-
+                angle = (float)Math.PI * 73 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                counter++;
                 return true;
             }
+            else if (counter < 45)
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-32) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
 
-            //todo: remove this once your code works.
-            rot0 = NullQ;
-            rot1 = NullQ;
-            rot2 = NullQ;
-            rot3 = NullQ;
+                angle = (float)Math.PI * (93-counter) / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                counter++;
+                return true;
+            }
+            else if (counter < 80)
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-12 + counter - 60) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (110 - counter + 60) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70 + counter - 60) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
 
-            return false;
+                angle = (float)Math.PI * 31 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                counter++;
+                return true;
+            }
+            else {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * 8 / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 130 / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 110 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * 31 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return false;
+            }
+            
+
+
+
+            
         }
 
 
@@ -116,7 +191,10 @@ namespace RobotController
 
         public bool PickStudAnimVertical(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
-
+            rot0 = NullQ;
+            rot1 = NullQ;
+            rot2 = NullQ;
+            rot3 = NullQ;
             bool myCondition = false;
             //todo: add a check for your condition
 
@@ -174,6 +252,7 @@ namespace RobotController
                 a.x = 0;
                 a.y = 0;
                 a.z = 0;
+
                 return a;
 
             }
