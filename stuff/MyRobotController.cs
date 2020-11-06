@@ -30,8 +30,11 @@ namespace RobotController
 
     public class MyRobotController
     {
+<<<<<<< HEAD
         private int slowCounter = 0;
         public MyQuat roTemp;
+=======
+>>>>>>> Ex2
         private int counter = 0;
         #region public methods
 
@@ -51,9 +54,13 @@ namespace RobotController
         public void PutRobotStraight(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3) {
             float angle;
             MyVec axis;
+<<<<<<< HEAD
             counter = 0;
             ex2reset = true;
             ex3reset = true;
+=======
+            
+>>>>>>> Ex2
             axis.x = 1;
             axis.y = 0;
             axis.z = 0;
@@ -85,6 +92,7 @@ namespace RobotController
 
         public bool PickStudAnim(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
+<<<<<<< HEAD
             if (ex2reset)
             {
                 counter = 0;
@@ -101,6 +109,11 @@ namespace RobotController
             }
             else if (slowCounter > 2) slowCounter = 0;
             if ((counter < 20)&&(counter>=0))
+=======
+            float angle;
+            MyVec axis;
+            if (counter < 20)
+>>>>>>> Ex2
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -121,9 +134,16 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
                 return true;
             }
             else if ((counter < 50) && (counter >= 0))
+=======
+                counter++;
+                return true;
+            }
+            else if (counter < 45)
+>>>>>>> Ex2
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -144,6 +164,7 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
                 return true;
             }
             else if ((counter < 70)&& (counter >= 0))
@@ -170,10 +191,17 @@ namespace RobotController
                 return true;
             }
             else if ((counter < 90) && (counter >= 0))
+=======
+                counter++;
+                return true;
+            }
+            else if (counter < 80)
+>>>>>>> Ex2
             {
                 axis.x = 1;
                 axis.y = 0;
                 axis.z = 0;
+<<<<<<< HEAD
                 angle = (float)Math.PI * (-32 + counter - 50) / 180;
                 rot1 = Rotate(NullQ, axis, angle);
                 angle = (float)Math.PI * (130 - counter + 50) / 180;
@@ -182,6 +210,16 @@ namespace RobotController
                 rot3 = Rotate(NullQ, axis, angle);
 
                 angle = (float)Math.PI * 43 / 180;
+=======
+                angle = (float)Math.PI * (-12 + counter - 60) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (110 - counter + 60) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70 + counter - 60) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * 31 / 180;
+>>>>>>> Ex2
                 axis.x = 0;
                 axis.y = 1;
                 axis.z = 0;
@@ -190,21 +228,37 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
                 return true;
             }
             else
             {
+=======
+                counter++;
+                return true;
+            }
+            else {
+>>>>>>> Ex2
                 axis.x = 1;
                 axis.y = 0;
                 axis.z = 0;
                 angle = (float)Math.PI * 8 / 180;
                 rot1 = Rotate(NullQ, axis, angle);
+<<<<<<< HEAD
                 angle = (float)Math.PI * 90 / 180;
                 rot2 = Rotate(NullQ, axis, angle);
                 angle = (float)Math.PI * 90 / 180;
                 rot3 = Rotate(NullQ, axis, angle);
 
                 angle = (float)Math.PI * 43 / 180;
+=======
+                angle = (float)Math.PI * 130 / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 110 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * 31 / 180;
+>>>>>>> Ex2
                 axis.x = 0;
                 axis.y = 1;
                 axis.z = 0;
@@ -213,7 +267,10 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
                 counter = -1;
+=======
+>>>>>>> Ex2
                 return false;
             }
             
@@ -230,6 +287,7 @@ namespace RobotController
 
         public bool PickStudAnimVertical(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
+<<<<<<< HEAD
             if (ex3reset)
             {
                 counter = 0;
@@ -410,20 +468,56 @@ namespace RobotController
 
 
 
+=======
+            rot0 = NullQ;
+            rot1 = NullQ;
+            rot2 = NullQ;
+            rot3 = NullQ;
+            bool myCondition = false;
+            //todo: add a check for your condition
+
+
+
+            while (myCondition)
+            {
+                //todo: add your code here
+
+
+            }
+
+            //todo: remove this once your code works.
+            rot0 = NullQ;
+            rot1 = NullQ;
+            rot2 = NullQ;
+            rot3 = NullQ;
+
+            return false;
+>>>>>>> Ex2
         }
 
 
         public static MyQuat GetSwing(MyQuat rot3)
         {
+<<<<<<< HEAD
             //rot3.z = 0;
             return rot3;
+=======
+            //todo: change the return value for exercise 3
+            return NullQ;
+
+>>>>>>> Ex2
         }
 
 
         public static MyQuat GetTwist(MyQuat rot3)
         {
+<<<<<<< HEAD
             //todo: change the return value for exercise 
             return rot3;
+=======
+            //todo: change the return value for exercise 3
+            return NullQ;
+>>>>>>> Ex2
 
         }
 
@@ -480,8 +574,12 @@ namespace RobotController
         }
 
 
+<<<<<<< HEAD
         private bool ex2reset;
         private bool ex3reset;
+=======
+
+>>>>>>> Ex2
 
         //todo: add here all the functions needed
 
