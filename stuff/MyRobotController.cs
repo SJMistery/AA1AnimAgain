@@ -30,8 +30,15 @@ namespace RobotController
 
     public class MyRobotController
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
         private int slowCounter = 0;
         public MyQuat roTemp;
+=======
+>>>>>>> Ex2
+=======
+        private int slowCounter = 0;
+>>>>>>> Ex3
         private int counter = 0;
         #region public methods
 
@@ -51,9 +58,13 @@ namespace RobotController
         public void PutRobotStraight(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3) {
             float angle;
             MyVec axis;
+<<<<<<< HEAD
             counter = 0;
             ex2reset = true;
             ex3reset = true;
+=======
+            
+>>>>>>> Ex2
             axis.x = 1;
             axis.y = 0;
             axis.z = 0;
@@ -85,6 +96,7 @@ namespace RobotController
 
         public bool PickStudAnim(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
+<<<<<<< HEAD
             if (ex2reset)
             {
                 counter = 0;
@@ -101,6 +113,17 @@ namespace RobotController
             }
             else if (slowCounter > 2) slowCounter = 0;
             if ((counter < 20)&&(counter>=0))
+=======
+            float angle;
+            MyVec axis;
+            slowCounter++;
+            if (slowCounter > 2)
+            {
+                slowCounter = 0;
+                counter++;
+            }
+            if (counter < 20)
+>>>>>>> Ex2
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -121,9 +144,22 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
+<<<<<<< HEAD
                 return true;
             }
             else if ((counter < 50) && (counter >= 0))
+=======
+                counter++;
+                return true;
+            }
+            else if (counter < 45)
+>>>>>>> Ex2
+=======
+                return true;
+            }
+            else if (counter < 50)
+>>>>>>> Ex3
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -144,6 +180,8 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
+<<<<<<< HEAD
                 return true;
             }
             else if ((counter < 70)&& (counter >= 0))
@@ -170,6 +208,58 @@ namespace RobotController
                 return true;
             }
             else if ((counter < 90) && (counter >= 0))
+=======
+                counter++;
+                return true;
+            }
+            else if (counter < 80)
+>>>>>>> Ex2
+=======
+                return true;
+            }
+            else if (counter < 70)
+>>>>>>> Ex3
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+                angle = (float)Math.PI * (-32 + counter - 50) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130 - counter + 50) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * 43 / 180;
+=======
+                angle = (float)Math.PI * (-12 + counter - 60) / 180;
+=======
+                angle = (float)Math.PI * (-32 + counter - 50) / 180;
+>>>>>>> Ex3
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130 - counter + 50) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70 + counter - 50) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+<<<<<<< HEAD
+                angle = (float)Math.PI * 31 / 180;
+>>>>>>> Ex2
+=======
+                angle = (float)Math.PI * 43 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return true;
+            }
+            else if (counter < 90)
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -182,6 +272,7 @@ namespace RobotController
                 rot3 = Rotate(NullQ, axis, angle);
 
                 angle = (float)Math.PI * 43 / 180;
+>>>>>>> Ex3
                 axis.x = 0;
                 axis.y = 1;
                 axis.z = 0;
@@ -190,21 +281,48 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
+<<<<<<< HEAD
                 return true;
             }
             else
             {
+=======
+                counter++;
+=======
+>>>>>>> Ex3
+                return true;
+            }
+            else {
+>>>>>>> Ex2
                 axis.x = 1;
                 axis.y = 0;
                 axis.z = 0;
                 angle = (float)Math.PI * 8 / 180;
                 rot1 = Rotate(NullQ, axis, angle);
+<<<<<<< HEAD
+<<<<<<< HEAD
                 angle = (float)Math.PI * 90 / 180;
                 rot2 = Rotate(NullQ, axis, angle);
                 angle = (float)Math.PI * 90 / 180;
                 rot3 = Rotate(NullQ, axis, angle);
 
                 angle = (float)Math.PI * 43 / 180;
+=======
+                angle = (float)Math.PI * 130 / 180;
+=======
+                angle = (float)Math.PI * 90 / 180;
+>>>>>>> Ex3
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+<<<<<<< HEAD
+                angle = (float)Math.PI * 31 / 180;
+>>>>>>> Ex2
+=======
+                angle = (float)Math.PI * 43 / 180;
+>>>>>>> Ex3
                 axis.x = 0;
                 axis.y = 1;
                 axis.z = 0;
@@ -213,7 +331,10 @@ namespace RobotController
                 rot1 = Rotate(rot1, axis, angle);
                 rot2 = Rotate(rot2, axis, angle);
                 rot3 = Rotate(rot3, axis, angle);
+<<<<<<< HEAD
                 counter = -1;
+=======
+>>>>>>> Ex2
                 return false;
             }
             
@@ -230,6 +351,8 @@ namespace RobotController
 
         public bool PickStudAnimVertical(out MyQuat rot0, out MyQuat rot1, out MyQuat rot2, out MyQuat rot3)
         {
+<<<<<<< HEAD
+<<<<<<< HEAD
             if (ex3reset)
             {
                 counter = 0;
@@ -240,11 +363,21 @@ namespace RobotController
             MyVec axis;
             slowCounter++;
             if ((slowCounter > 2) && (counter != -1))
+=======
+            float angle;
+            MyVec axis;
+            slowCounter++;
+            if (slowCounter > 2)
+>>>>>>> Ex3
             {
                 slowCounter = 0;
                 counter++;
             }
+<<<<<<< HEAD
             if ((counter < 20) && (counter >= 0))
+=======
+            if (counter < 20)
+>>>>>>> Ex3
             {
                 axis.x = 1;
                 axis.y = 0;
@@ -255,6 +388,7 @@ namespace RobotController
                 rot2 = Rotate(NullQ, axis, angle);
                 angle = (float)Math.PI * (90 - counter) / 180;
                 rot3 = Rotate(NullQ, axis, angle);
+<<<<<<< HEAD
 
                 angle = (float)Math.PI * 73 / 180;
                 axis.x = 0;
@@ -410,20 +544,202 @@ namespace RobotController
 
 
 
+=======
+            rot0 = NullQ;
+            rot1 = NullQ;
+            rot2 = NullQ;
+            rot3 = NullQ;
+            bool myCondition = false;
+            //todo: add a check for your condition
+=======
+>>>>>>> Ex3
+
+                angle = (float)Math.PI * 73 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return true;
+            }
+            else if (counter < 50)
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-32) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * (93 - counter) / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return true;
+            }
+            else if (counter < 70)
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-32 + counter - 50) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130 - counter + 50) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (70 + counter - 50) / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+                angle = (float)Math.PI * 43 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return true;
+            }
+            else if (counter < 90)
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * (-32 + counter - 50) / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * (130 - counter + 50) / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+
+                angle = (float)Math.PI * 43 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+
+
+                return true;
+            }
+            else if (counter <170)
+            {
+
+                //here i am supposed to twist the rot3
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * 8 / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+
+                angle = (float)Math.PI * (counter-80) / 180;
+                axis.x = 0;
+                axis.y = 0;
+                axis.z = 1;
+                rot3 = Rotate(rot3, axis, angle);
+
+
+                angle = (float)Math.PI * 43 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return true;
+            }
+            else
+            {
+                axis.x = 1;
+                axis.y = 0;
+                axis.z = 0;
+                angle = (float)Math.PI * 8 / 180;
+                rot1 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot2 = Rotate(NullQ, axis, angle);
+                angle = (float)Math.PI * 90 / 180;
+                rot3 = Rotate(NullQ, axis, angle);
+
+
+                angle = (float)Math.PI * 90 / 180;
+                axis.x = 0;
+                axis.y = 0;
+                axis.z = 1;
+                rot3 = Rotate(rot3, axis, angle);
+
+
+                angle = (float)Math.PI * 43 / 180;
+                axis.x = 0;
+                axis.y = 1;
+                axis.z = 0;
+                //todo: change this, use the function Rotate declared below
+                rot0 = Rotate(NullQ, axis, angle);
+                rot1 = Rotate(rot1, axis, angle);
+                rot2 = Rotate(rot2, axis, angle);
+                rot3 = Rotate(rot3, axis, angle);
+                return false;
+            }
+
+
+
+
+
+<<<<<<< HEAD
+            return false;
+>>>>>>> Ex2
+=======
+>>>>>>> Ex3
         }
 
 
         public static MyQuat GetSwing(MyQuat rot3)
         {
+<<<<<<< HEAD
             //rot3.z = 0;
             return rot3;
+=======
+            //todo: change the return value for exercise 3
+            return rot3;
+
+>>>>>>> Ex2
         }
 
 
         public static MyQuat GetTwist(MyQuat rot3)
         {
+<<<<<<< HEAD
             //todo: change the return value for exercise 
             return rot3;
+=======
+            //todo: change the return value for exercise 3
+<<<<<<< HEAD
+            return NullQ;
+>>>>>>> Ex2
+=======
+            return rot3;
+>>>>>>> Ex3
 
         }
 
@@ -480,8 +796,12 @@ namespace RobotController
         }
 
 
+<<<<<<< HEAD
         private bool ex2reset;
         private bool ex3reset;
+=======
+
+>>>>>>> Ex2
 
         //todo: add here all the functions needed
 
